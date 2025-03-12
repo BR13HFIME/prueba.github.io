@@ -1,0 +1,19 @@
+.navbar-nav .nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 0 10px green;
+}
+.card-title {
+    text-align: center;
+}
+.card {
+    margin-top: 25px;
+}
+
+.card:first-child {
+    margin-top: 0;
+}

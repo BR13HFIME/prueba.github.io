@@ -3,12 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/css.css">
     <title>¡Alerta de Seguridad!</title>
 </head>
 <body>
-    <h1>¡Tu dispositivo está en peligro!</h1>
-    <p>No cierres esta página hasta que se resuelva el problema.</p>
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img src="IMAGENES/logoAfirme.png" alt="" class="d-inline-block align-text-top">
+            </a>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center w-100">
+                    <li class="nav-item mx-2">
+                        <button type="button" class="btn btn-outline-success btn-lg">Boletines informativos</button>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <button type="button" class="btn btn-outline-success btn-lg">Cursos</button>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <button type="button" class="btn btn-outline-success btn-lg">Informacion</button>
+                    </li>
+                </ul>
+                <form class="d-flex" role="Buscar">
+                    <input class="form-control me-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 
-    <script src="js.js"></script>
+    <div>
+        <div class="container mt-5">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">Esta sera la pagina de ciberseguridad de afirme, por ello necesitamos que nos proporciones tus datos para que podamos brindarte informacion de boletines, cursos y demas.</h2>
+                </div>
+            </div>
+            <div class="card mt-3 mx-auto" style="max-width: 600px;">
+                <div class="card-body">
+                    <form id="phishing-form">
+                        <input type="text" name="name" placeholder="Nombre" required>
+                        <input type="email" name="email" placeholder="Correo" required>
+                        <a href="info.html"><button type="button" class="btn btn-outline-success btn-lg">Enviar</button></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!---- <script src="js.js"></script> -->
+           <!-- Importamos JQuery v3.7.1 -->
+           <script src="Bootstrap/jquery.min.js"></script>
+           <!-- Importamos el JS de Sweetalert2 v11.14.0 -->
+           <script src="Bootstrap/sweetalert2.all.js"></script>
+           <!-- Importamos el JS de Bootstrap v5.3.3 -->
+           <script src="Bootstrap/bootstrap.bundle.min.js"></script>
+           <!--importamos Momentjs-->
+           <script src="Bootstrap/moment-with-locales.min.js"></script>
+           <!--importamos Fontawesome-->
+           <script src="Bootstrap/fontawesome.js"></script>
+
+           <script>
+            document.getElementById("phishing-form").addEventListener("submit", function(event) {
+                event.preventDefault();
+                const formData = new FormData(this);
+                fetch("", {
+                    method: "POST",
+                    body: formData
+                }).then(response => response.text())
+                  .then(data => console.log(data));
+            });
+            </script>
 </body>
 </html>
